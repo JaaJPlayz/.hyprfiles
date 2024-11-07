@@ -1,0 +1,44 @@
+[general]
+; framerate = 60
+; autosens = 1
+; sensitivity = 100
+; bars = 0
+; bar_width = 2
+; bar_spacing = 1
+
+[input]
+; method = pulse
+; source = auto
+
+[output]
+method = noncurses
+orientation = bottom
+channels = stereo
+mono_option = average
+reverse = 0
+
+[color]
+# Enable gradient mode with a brighter Nord theme
+gradient = 1
+gradient_count = 5
+
+# Brighter Nord gradient colors for a lively, cool look
+gradient_color_1 = '#5E81AC'   ; Soft blue (Nord Frost)
+gradient_color_2 = '#81A1C1'   ; Lighter blue (Nord Frost)
+gradient_color_3 = '#88C0D0'   ; Light cyan-blue (Nord Frost)
+gradient_color_4 = '#8FBCBB'   ; Bright cyan-blue (Nord Frost)
+gradient_color_5 = '#E5E9F0'   ; Lightest blue-gray (Snow Storm)
+
+# Set the background to default to keep it transparent
+background = default
+foreground = default
+
+[smoothing]
+; noise_reduction = 77
+
+[eq]
+; 1 = 1  # bass
+; 2 = 1
+; 3 = 1  # midtone
+; 4 = 1
+; 5 = 1  # treble
