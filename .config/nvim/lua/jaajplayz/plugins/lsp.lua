@@ -17,6 +17,7 @@ local M = {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
       'hrsh7th/cmp-nvim-lsp',
+      'folke/neodev.nvim',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
