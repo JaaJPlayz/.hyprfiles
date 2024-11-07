@@ -25,6 +25,8 @@ hyprland 0.44.1-2
 intel-ucode 20241029-1
 iwd 3.0-1
 kitty 0.37.0-1
+lazydocker 0.23.3-1
+lazygit 0.44.1-1
 libnotify 0.8.3-1
 libpulse 17.0-3
 linux 6.11.6.arch1-1
