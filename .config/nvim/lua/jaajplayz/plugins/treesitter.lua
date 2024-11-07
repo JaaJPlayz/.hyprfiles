@@ -17,6 +17,13 @@ local M = {
 				"query",
 				"vim",
 				"vimdoc",
+				"rust",
+				"toml",
+				"yaml",
+				"json",
+				"python",
+				"lua",
+				"ruby",
 			},
 
 			auto_install = true,
