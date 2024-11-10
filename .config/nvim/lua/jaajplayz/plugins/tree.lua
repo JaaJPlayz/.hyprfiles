@@ -13,8 +13,7 @@ local M = {
 				group_empty = false,
 			},
 			filters = {
-				dotfiles = false,
-				custom = { "node_modules", ".venv", ".git" },
+				dotfiles = true,
 			},
 		})
 	end,

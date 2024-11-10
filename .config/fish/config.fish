@@ -17,6 +17,13 @@ if status is-interactive
     alias vi="nvim"
     alias v="nvim"
 
+    # Python aliases
+    alias pyvenv="python3 -m venv .venv && source .venv/bin/activate.fish"
+    alias pysource="source .venv/bin/activate.fish"
+    alias pyfreeze="pip freeze > dev-requirements.txt"
+    alias pyinstall="pip install -r dev-requirements.txt"
+    alias pyuninstall="pip uninstall -r dev-requirements.txt"
+
     # Neofetch R.I.P
     alias neofetch="fastfetch --logo ArchStrike"
     alias fastfetch="fastfetch --logo ArchStrike"
