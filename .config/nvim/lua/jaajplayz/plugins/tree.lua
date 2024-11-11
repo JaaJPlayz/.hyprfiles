@@ -13,7 +13,8 @@ local M = {
 				group_empty = false,
 			},
 			filters = {
-				dotfiles = true,
+				dotfiles = false,
+        custom = { ".env" },
 			},
 		})
 	end,
