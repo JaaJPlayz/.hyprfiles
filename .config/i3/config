@@ -46,14 +46,10 @@ floating_modifier $mod
 
 tiling_drag modifier titlebar
 
-bindsym $mod+t exec kitty
-
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+period exec rofi -show emoji
 
 # change focus
 bindsym $mod+h focus left
@@ -66,6 +62,18 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+# Application launchers
+bindsym $mod+t exec kitty
+bindsym $mod+i exec google-chrome-stable
+bindsym $mod+e exec dolphin
+bindsym $mod+d exec rofi -show run
+bindsym $mod+period exec rofi -show emoji
+#exec neovim
+bindsym $mod+n exec kitty -e nvim
+
+
+
 
 # split in horizontal orientation
 bindsym $altMod+h split h
@@ -142,6 +150,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# mod + b to toggle the bar
+bindsym $mod+b bar mode toggle
+
+# remove window titlebars
+for_window [class="^.*"] border pixel 0
+
 bar {
         status_command i3status
+        position top
+        font pango:JetBrainsMono Nerd Font 12
+        mode dock
+        colors {
+                # change chars colors to white
+                statusline #ffffff
+                background #2e3440
+                statusline #FFFFFF
+                separator #4c566a
+        }
 }
