@@ -42,6 +42,14 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Control audio with altMod + v (vol down) and altMod + Shift + v (vol up)
+bindsym $altMod+v exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym $altMod+Shift+v exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+# Control brightness with altMod + b (brightness down) and altMod + Shift + b (brightness up)
+bindsym $altMod+b exec --no-startup-id brightnessctl set 10- && $refresh_i3status
+bindsym $altMod+Shift+b exec --no-startup-id brightnessctl set 10+ && $refresh_i3status
+
 floating_modifier $mod
 
 tiling_drag modifier titlebar
@@ -72,20 +80,13 @@ bindsym $mod+period exec rofi -show emoji
 #exec neovim
 bindsym $mod+n exec kitty -e nvim
 
-
-
-
-# split in horizontal orientation
-bindsym $altMod+h split h
-
-# split in vertical orientation
-bindsym $altMod+v split v
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+w layout tabbed
+bindsym $altMod+s layout stacked
+bindsym $altMod+w layout tabbed
+bindsym $altMod+e layout toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -150,11 +151,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Gaps
+gaps inner 5
+gaps outer 5
+
 # mod + b to toggle the bar
 bindsym $mod+b bar mode toggle
 
 # remove window titlebars
 for_window [class="^.*"] border pixel 0
+
+# Enable autotiling
+exec_always autotiling
 
 bar {
         status_command i3status
