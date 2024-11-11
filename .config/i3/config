@@ -165,14 +165,16 @@ for_window [class="^.*"] border pixel 0
 exec_always autotiling
 
 bar {
-        status_command i3status
+        status_command i3status --config ~/.config/i3/i3status
         position top
         font pango:JetBrainsMono Nerd Font 12
         mode dock
+        mode hide
+
         colors {
                 # change chars colors to white
                 statusline #ffffff
-                background #2e3440
+                background #2e344000
                 statusline #FFFFFF
                 separator #4c566a
         }
