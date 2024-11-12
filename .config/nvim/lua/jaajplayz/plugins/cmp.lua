@@ -31,6 +31,7 @@ local M = {
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"hrsh7th/cmp-nvim-lsp-document-symbol",
 			"onsails/lspkind-nvim",
+			"luckasRanarison/tailwind-tools.nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -77,6 +78,11 @@ local M = {
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lsp_document_symbol" },
 					{ name = "nvim_lua" },
+				},
+				formatting = {
+					format = require("lspkind").cmp_format({
+						before = require("tailwind-tools.cmp").lspkind_format,
+					}),
 				},
 			})
 		end,
